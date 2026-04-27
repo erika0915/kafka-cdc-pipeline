@@ -1,0 +1,21 @@
+{
+  "name": "mysql-source",
+  "config": {
+    "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+    "database.hostname": "${env:MYSQL_SOURCE_HOST}",
+    "database.port": "${env:MYSQL_SOURCE_PORT}",
+    "database.user": "${env:MYSQL_SOURCE_USER}",
+    "database.password": "${env:MYSQL_SOURCE_PASSWORD}",
+    "database.server.id": "2",
+    "topic.prefix": "cdc",
+    "database.include.list": "testdb",
+    "table.include.list": "testdb.users",
+    "schema.history.internal.kafka.bootstrap.servers": "kafka-1:19092,kafka-2:19092,kafka-3:19092",
+    "schema.history.internal.kafka.topic": "schema-changes.testdb",
+    "snapshot.mode": "initial",
+    "transforms": "unwrap",
+    "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState",
+    "transforms.unwrap.delete.handling.mode": "drop",
+    "transforms.unwrap.drop.tombstones": "true"
+  }
+}
