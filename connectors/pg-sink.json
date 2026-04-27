@@ -12,6 +12,7 @@
     "pk.fields": "id",
     "auto.create": "true",
     "auto.evolve": "true",
+    "delete.enabled": "true",
     "transforms": "route",
     "transforms.route.type": "org.apache.kafka.connect.transforms.RegexRouter",
     "transforms.route.regex": ".*\\..*\\.(.*)",
