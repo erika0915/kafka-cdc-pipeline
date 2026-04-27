@@ -9,7 +9,7 @@
     "database.server.id": "2",
     "topic.prefix": "cdc",
     "database.include.list": "testdb",
-    "table.include.list": "testdb.users",
+    "table.include.list": "testdb.users,testdb.orders",
     "schema.history.internal.kafka.bootstrap.servers": "kafka-1:19092,kafka-2:19092,kafka-3:19092",
     "schema.history.internal.kafka.topic": "schema-changes.testdb",
     "snapshot.mode": "initial",

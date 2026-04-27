@@ -14,3 +14,15 @@ CREATE TABLE users (
 INSERT INTO users (name, email) VALUES
   ('Alice', 'alice@example.com'),
   ('Bob',   'bob@example.com');
+
+CREATE TABLE orders (
+  id         INT PRIMARY KEY AUTO_INCREMENT,
+  user_id    INT NOT NULL,
+  product    VARCHAR(100) NOT NULL,
+  amount     INT NOT NULL,
+  ordered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO orders (user_id, product, amount) VALUES
+  (1, 'Laptop', 1),
+  (2, 'Mouse',  2);
